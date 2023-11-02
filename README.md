@@ -9,4 +9,4 @@ python manage.py migrate
 python manage.py runserver
 
 ```
-Access endpoints (defined in `django_ninja_demoapi/urls.py`) via `http://127.0.0.1:8000/api/<route>`.
+Explore endpoints defined in `django_ninja_demoapi/urls.py` via interactive OpenAPI/Swagger UI http://127.0.0.1:8000/api/docs.
