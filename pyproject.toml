@@ -1,0 +1,30 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Jarkko Saltiola", email = "jarkko@saltiolacode.fi"},
+]
+dependencies = [
+    "django",
+    "django-ninja",
+    "faker",
+    "python-avatars",
+    "cairosvg",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm]
+[[tool.pdm.source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[tool.pdm.dev-dependencies]
+dev = []
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
