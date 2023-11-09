@@ -1,12 +1,11 @@
 # Demo REST API for testing purposes
 
-Running with [Pipenv](https://pipenv.pypa.io/en/latest/):
+Running with [PDM](https://pdm-project.org/) (install with eg. `pipx install pdm`):
 
 ```
-pipenv shell
-pipenv install
-python manage.py migrate
-python manage.py runserver
-
+pdm install
+pdm run manage.py migrate
+pdm run manage.py runserver
 ```
+
 Explore endpoints defined in `django_ninja_demoapi/urls.py` via interactive OpenAPI/Swagger UI http://127.0.0.1:8000/api/docs.
