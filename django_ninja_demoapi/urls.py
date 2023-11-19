@@ -15,7 +15,7 @@ from faker import Faker
 fake = Faker()
 
 api = NinjaAPI()
-
+print("Explore endpoints defined in `django_ninja_demoapi/urls.py` via interactive OpenAPI/Swagger UI http://127.0.0.1:8000/api/docs")
 
 @api.get("/rot13")
 # TODO validation?, delayed jobs for polling
