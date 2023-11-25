@@ -6,9 +6,10 @@ There are probably better ways to do this but it was done partially as an exerci
 
 ## TODO
 
-- [ ] File uploads 
-- [ ] Token authentication
+- [x] File uploads 
+- [x] Token authentication
 - [ ] Keep token secret
+- [ ] Deployment
 
 ## Local installation
 
