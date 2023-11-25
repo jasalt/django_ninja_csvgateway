@@ -7,10 +7,7 @@ authors = [
 ]
 dependencies = [
     "django",
-    "django-ninja",
-    "faker",
-    "python-avatars",
-    "cairosvg",
+    "django-ninja>=1.0.1",
 ]
 requires-python = ">=3.11"
 readme = "README.md"
@@ -25,6 +22,3 @@ name = "pypi"
 [tool.pdm.dev-dependencies]
 dev = []
 
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"

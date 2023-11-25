@@ -1,19 +1,39 @@
-# Demo REST API for testing purposes
+# Simple API receiving and serving (CSV) files with token authentication
 
-## Pre-requirements
-Mainly tested on Debian, Mac instructions may not be up to date.
+Allows passing CSV files from private server behind firewall to public endpoint accessible by Grafana Cloud Infinity Data Source to make it available on a dashboard.
 
-- Python 3.11 `sudo apt install python` / `brew install python`
-- [pipx](https://github.com/pypa/pipx) `sudo apt install pipx` / `brew install pipx`
-- [PDM](https://pdm-project.org/) `pipx install pdm`
+There are probably better ways to do this but it was done partially as an exercise to learn [Django Ninja API Framework](https://django-ninja.dev/) and [Fly.io](https://fly.io/docs/django/getting-started/).
 
-## Running
-PDM manages virtualenv at .venv and installs dependencies via Pip. Difference from poetry, pipenv or using plain virtualenv is that it does not require activating the virtualenv as a subshell every time. If subshell is needed it [can be activated](https://pdm-project.org/latest/usage/venv/#activate-a-virtualenv) via `eval $(pdm venv activate)` (bash) or `pdm venv activate` (zsh).
+## TODO
 
+- [ ] File uploads 
+- [ ] Token authentication
+- [ ] Keep token secret
+
+## Local installation
+
+### Pre-requisites
+
+- Python 3.11 (`sudo apt install python`)
+- [pipx](https://github.com/pypa/pipx) (`sudo apt install pipx`, `brew install pipx`)
+- [PDM](https://pdm-project.org/) (`pipx install pdm`)
+
+### Running with PDM
+
+[PDM](https://pdm-project.org/) is a Python package and virtualenv manager quite similar to [Poetry](https://python-poetry.org/) and [Pipenv](https://pipenv.pypa.io/en/latest/) but has 50% less characters and some other differences.
+
+Create `.venv`, install dependencies, run migrations and start development server with:
 ```
 pdm install
 pdm run manage.py migrate
 pdm run manage.py runserver
 ```
 
-Explore endpoints defined in `django_ninja_demoapi/urls.py` via interactive OpenAPI/Swagger UI http://127.0.0.1:8000/api/docs.
+Explore endpoints defined in `django_ninja_csvgateway/urls.py` via interactive OpenAPI/Swagger UI at http://127.0.0.1:8000/api/docs.
+
+## Deploying to Fly.io
+
+### TODO
+
+- [ ] Basic setup https://fly.io/docs/django/getting-started/
+- [ ] Add persisting volume for uploads folder https://fly.io/docs/reference/volumes/

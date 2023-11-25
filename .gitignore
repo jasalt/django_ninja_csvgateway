@@ -1,4 +1,4 @@
 .pdm-python
 db.sqlite3
 __pycache__
-
+pyrightconfig.json
