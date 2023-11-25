@@ -1,6 +1,6 @@
 # Simple API receiving and serving (CSV) files with token authentication
 
-Allows passing CSV files from private server behind firewall to public endpoint accessible by Grafana Cloud Infinity Data Source to make it available on a dashboard.
+Allows passing CSV files from private server behind firewall to public endpoint accessible by [Grafana Cloud Infinity Data Source](https://grafana.com/grafana/plugins/yesoreyeram-infinity-datasource/) to make it available on a dashboard.
 
 There are probably better ways to do this but it was done partially as an exercise to learn [Django Ninja API Framework](https://django-ninja.dev/) and [Fly.io](https://fly.io/docs/django/getting-started/).
 
