@@ -42,6 +42,9 @@ HTTP accept header
 - Key: `accept`
 - Value: `*/*`
 
+![Screenshot_20231126_193757](https://github.com/jasalt/django_ninja_csvgateway/assets/2306521/0364ddc9-08be-485e-9c2b-1e7a8f7ce70d)
+
+
 ## Local installation
 
 ### Pre-requisites
