@@ -63,6 +63,8 @@ python manage.py createsuperuser
 
 ### Notes
 
-Some Fly.io Python docs are bit outdated with mentions of `Procfile` etc. Generic `Dockerfile` method and `fly.toml` are used to get Django project running. 
+The `fly deploy` command guesses project to use Poetry (based on `pyproject.toml`?) and creates Poetry boilerplate `Dockerfile` which needs some editing to get it working without Poetry. Following basic `Dockerfile` example from [DjangoX](https://github.com/wsvincent/djangox/tree/main).
 
-The `fly deploy` command also guesses project to use Poetry (based on `pyproject.toml`?) and creates Poetry boilerplate `Dockerfile` which needs some editing to get it working without Poetry. Following basic `Dockerfile` example from [DjangoX](https://github.com/wsvincent/djangox/tree/main).
+## Improvement ideas
+
+Instead of setting API token as environment variable, it could have a database model, admin management view and read/write permission setting etc. to make this more flexible if needed.
