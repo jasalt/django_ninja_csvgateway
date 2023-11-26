@@ -61,10 +61,11 @@ python manage.py createsuperuser
 - [x] Initial setup
 - [x] Add persisting volume for uploads folder https://fly.io/docs/reference/volumes/
 - [x] Hide `fly.toml` from repo, keep `fly.toml.example` and change app url to secret.
-- [ ] Admin CSRF verification fails
-- [ ] CSS fails loading from /static/
-- [ ] See Django deployment checklist
+- [x] Admin CSRF verification fails (allows all from *.fly.dev)
+- [ ] CSS fails loading from `/static/` [(see doc)](https://fly.io/django-beats/deploying-django-to-production/#static-files)
 
 ### Notes
 
-Fly.io Python docs are outdated with mentions of `Procfile` etc. while a generic `Dockerfile` and `fly.toml` are only required to get Django project running. The `fly deploy` command also guesses project to use Poetry (based on `pyproject.toml`?) and creates Poetry boilerplate `Dockerfile` which needs some editing to get it working without Poetry. Followed `Dockerfile` example from [DjangoX](https://github.com/wsvincent/djangox/tree/main).
+Some Fly.io Python docs are bit outdated with mentions of `Procfile` etc. Generic `Dockerfile` method and `fly.toml` are used to get Django project running. 
+
+The `fly deploy` command also guesses project to use Poetry (based on `pyproject.toml`?) and creates Poetry boilerplate `Dockerfile` which needs some editing to get it working without Poetry. Following basic `Dockerfile` example from [DjangoX](https://github.com/wsvincent/djangox/tree/main).

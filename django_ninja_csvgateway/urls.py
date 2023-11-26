@@ -10,16 +10,19 @@ from ninja.security import HttpBearer
 from ninja.files import UploadedFile
 import os
 
-CSVGATEWAY_PASSWORD = os.environ['CSVGATEWAY_TOKEN']
+import environs
+env = environs.Env()
+env.read_env()
+
+API_TOKEN = env.str('API_TOKEN')
 
 class AuthBearer(HttpBearer):
     def authenticate(self, request, token):
-        if token == CSVGATEWAY_PASSWORD:
+        if token == API_TOKEN:
             return token
 
-
 api = NinjaAPI(auth=AuthBearer())  # global bearer authentication
-UPLOADPATH = 'uploads/'
+UPLOADPATH = 'data/uploads/'
 
 
 @api.post('/upload')
