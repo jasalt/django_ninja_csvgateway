@@ -40,6 +40,8 @@ RUN set -ex && \
 
 COPY . /code/
 
+RUN python manage.py collectstatic
+
 EXPOSE 8000
 
 CMD ["gunicorn", "--bind", ":8000", "--workers", "1", "django_ninja_csvgateway.wsgi"]

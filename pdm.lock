@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:cbb57ba766051972eca8c6ae17f963ce866ff9d483780fc68e9d410fb1f82764"
+content_hash = "sha256:ccf2071dd0adf3886b2a6d4104acb0fbfc69fe02432a7aad939cd765a1db4411"
 
 [[package]]
 name = "annotated-types"
@@ -227,4 +227,14 @@ summary = "Provider of IANA time zone data"
 files = [
     {file = "tzdata-2023.3-py2.py3-none-any.whl", hash = "sha256:7e65763eef3120314099b6939b5546db7adce1e7d6f2e179e3df563c70511eda"},
     {file = "tzdata-2023.3.tar.gz", hash = "sha256:11ef1e08e54acb0d4f95bdb1be05da659673de4acbd21bf9c69e94cc5e907a3a"},
+]
+
+[[package]]
+name = "whitenoise"
+version = "6.6.0"
+requires_python = ">=3.8"
+summary = "Radically simplified static file serving for WSGI applications"
+files = [
+    {file = "whitenoise-6.6.0-py3-none-any.whl", hash = "sha256:b1f9db9bf67dc183484d760b99f4080185633136a273a03f6436034a41064146"},
+    {file = "whitenoise-6.6.0.tar.gz", hash = "sha256:8998f7370973447fac1e8ef6e8ded2c5209a7b1f67c1012866dbcd09681c3251"},
 ]

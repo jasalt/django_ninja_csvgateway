@@ -9,7 +9,7 @@ There are probably better ways to do this but it was done partially as an exerci
 - [x] File uploads 
 - [x] Token authentication
 - [x] Keep token secret
-- [ ] Deployment
+- [x] Deployment
 
 ## Local installation
 
@@ -36,25 +36,22 @@ Explore endpoints defined in `django_ninja_csvgateway/urls.py` via interactive O
 
 Using simplified Dockerfile without PDM, prepare `requirements.txt` with `pdm export > requirements.txt` [(doc)](https://pdm-project.org/latest/usage/advanced/#export-requirementstxt-or-setuppy). Requirements file includes artifact hashes and might not work on other platforms.
 
-Create Fly.io application, set secrets and deploy:
+Create Fly.io application, deploy and set secrets:
 
 ```
 fly auth login
 fly launch
-fly secrets set CSVGATEWAY_TOKEN=XXX
-fly secrets set CSVGATEWAY_SECRET_KEY=XXX
-fly secrets unset SECRET_KEY  # this was unnecessarily set by launch script ?
 fly deploy
+fly secrets set API_TOKEN=XXX
 ```
 
 Then run migrations and create super user via fly shell.
 
 ```
-fly console --machine <machine_id> -C bash
+fly ssh console
 python manage.py migrate
 python manage.py createsuperuser
 ```
-
 
 ### TODO
 
@@ -62,7 +59,7 @@ python manage.py createsuperuser
 - [x] Add persisting volume for uploads folder https://fly.io/docs/reference/volumes/
 - [x] Hide `fly.toml` from repo, keep `fly.toml.example` and change app url to secret.
 - [x] Admin CSRF verification fails (allows all from *.fly.dev)
-- [ ] CSS fails loading from `/static/` [(see doc)](https://fly.io/django-beats/deploying-django-to-production/#static-files)
+- [x] CSS fails loading from `/static/` [(see doc)](https://fly.io/django-beats/deploying-django-to-production/#static-files)
 
 ### Notes
 
