@@ -7,6 +7,7 @@ app = "csvgateway"
 primary_region = "arn"
 console_command = "/code/manage.py shell"
 
+
 [build]
 
 [env]
@@ -19,6 +20,12 @@ console_command = "/code/manage.py shell"
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]
+
+[mounts]
+  source="csvgateway_uploads"
+  destination="/uploads"
+  initial_size = "1"
+  auto_extend_size_threshold = 0
 
 [[vm]]
   cpu_kind = "shared"

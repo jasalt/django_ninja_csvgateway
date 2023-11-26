@@ -8,7 +8,7 @@ There are probably better ways to do this but it was done partially as an exerci
 
 - [x] File uploads 
 - [x] Token authentication
-- [ ] Keep token secret
+- [x] Keep token secret
 - [ ] Deployment
 
 ## Local installation
@@ -43,14 +43,27 @@ fly auth login
 fly launch
 fly secrets set CSVGATEWAY_TOKEN=XXX
 fly secrets set CSVGATEWAY_SECRET_KEY=XXX
+fly secrets unset SECRET_KEY  # this was unnecessarily set by launch script ?
 fly deploy
 ```
+
+Then run migrations and create super user via fly shell.
+
+```
+fly console --machine <machine_id> -C bash
+python manage.py migrate
+python manage.py createsuperuser
+```
+
 
 ### TODO
 
 - [x] Initial setup
-- [ ] Add persisting volume for uploads folder https://fly.io/docs/reference/volumes/
-- [ ] Hide `fly.toml` from repo, keep `fly.toml.example` and change app url to secret.
+- [x] Add persisting volume for uploads folder https://fly.io/docs/reference/volumes/
+- [x] Hide `fly.toml` from repo, keep `fly.toml.example` and change app url to secret.
+- [ ] Admin CSRF verification fails
+- [ ] CSS fails loading from /static/
+- [ ] See Django deployment checklist
 
 ### Notes
 

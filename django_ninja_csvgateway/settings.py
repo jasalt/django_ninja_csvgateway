@@ -23,7 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = environ['CSVGATEWAY_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+# Disable DEBUG when running outside development machine
+# Requires setting environment variable DEVELOPING first
+# export DEVELOPING=true
+if "DEVELOPING" in environ and environ["DEVELOPING"] == 'true':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
