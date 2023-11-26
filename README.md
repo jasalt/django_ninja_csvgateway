@@ -34,7 +34,24 @@ Explore endpoints defined in `django_ninja_csvgateway/urls.py` via interactive O
 
 ## Deploying to Fly.io
 
+Using simplified Dockerfile without PDM, prepare `requirements.txt` with `pdm export > requirements.txt` [(doc)](https://pdm-project.org/latest/usage/advanced/#export-requirementstxt-or-setuppy). Requirements file includes artifact hashes and might not work on other platforms.
+
+Create Fly.io application, set secrets and deploy:
+
+```
+fly auth login
+fly launch
+fly secrets set CSVGATEWAY_TOKEN=XXX
+fly secrets set CSVGATEWAY_SECRET_KEY=XXX
+fly deploy
+```
+
 ### TODO
 
-- [ ] Basic setup https://fly.io/docs/django/getting-started/
+- [x] Initial setup
 - [ ] Add persisting volume for uploads folder https://fly.io/docs/reference/volumes/
+- [ ] Hide `fly.toml` from repo, keep `fly.toml.example` and change app url to secret.
+
+### Notes
+
+Fly.io Python docs are outdated with mentions of `Procfile` etc. while a generic `Dockerfile` and `fly.toml` are only required to get Django project running. The `fly deploy` command also guesses project to use Poetry (based on `pyproject.toml`?) and creates Poetry boilerplate `Dockerfile` which needs some editing to get it working without Poetry. Followed `Dockerfile` example from [DjangoX](https://github.com/wsvincent/djangox/tree/main).

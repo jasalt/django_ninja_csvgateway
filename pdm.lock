@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:84f8a5797bade0ceb73f16d189b8a4e4904090905bca9bb7d52289f94a2dc789"
+content_hash = "sha256:75072c3f738beff53f8484724ea1b4f54d54d5cbd770a46d0f1de6e471899e46"
 
 [[package]]
 name = "annotated-types"
@@ -54,6 +54,29 @@ dependencies = [
 files = [
     {file = "django_ninja-1.0.1-py3-none-any.whl", hash = "sha256:5aabd453323ffa59695cc5acce452e93c08d8fb6f6f3cac457a7118a64aba329"},
     {file = "django_ninja-1.0.1.tar.gz", hash = "sha256:88d85f7807042dcef712bc058d56b031445ea906dd804f86457f6bdd7873b0cd"},
+]
+
+[[package]]
+name = "gunicorn"
+version = "21.2.0"
+requires_python = ">=3.5"
+summary = "WSGI HTTP Server for UNIX"
+dependencies = [
+    "packaging",
+]
+files = [
+    {file = "gunicorn-21.2.0-py3-none-any.whl", hash = "sha256:3213aa5e8c24949e792bcacfc176fef362e7aac80b76c56f6b5122bf350722f0"},
+    {file = "gunicorn-21.2.0.tar.gz", hash = "sha256:88ec8bff1d634f98e61b9f65bc4bf3cd918a90806c6f5c48bc5603849ec81033"},
+]
+
+[[package]]
+name = "packaging"
+version = "23.2"
+requires_python = ">=3.7"
+summary = "Core utilities for Python packages"
+files = [
+    {file = "packaging-23.2-py3-none-any.whl", hash = "sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"},
+    {file = "packaging-23.2.tar.gz", hash = "sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"},
 ]
 
 [[package]]

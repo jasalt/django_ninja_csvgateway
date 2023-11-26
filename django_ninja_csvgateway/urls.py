@@ -10,10 +10,11 @@ from ninja.security import HttpBearer
 from ninja.files import UploadedFile
 import os
 
+CSVGATEWAY_PASSWORD = os.environ['CSVGATEWAY_TOKEN']
 
 class AuthBearer(HttpBearer):
     def authenticate(self, request, token):
-        if token == "supersecret":
+        if token == CSVGATEWAY_PASSWORD:
             return token
 
 
